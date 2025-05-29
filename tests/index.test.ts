@@ -306,13 +306,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['FLIGHTAWARE_BASE_URL'] = ''; // empty
       const client = new Flightaware({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://My-Env.flightaware.com/aeroapi');
+      expect(client.baseURL).toEqual('https://aeroapi.flightaware.com/aeroapi');
     });
 
     test('blank env variable', () => {
       process.env['FLIGHTAWARE_BASE_URL'] = '  '; // blank
       const client = new Flightaware({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://My-Env.flightaware.com/aeroapi');
+      expect(client.baseURL).toEqual('https://aeroapi.flightaware.com/aeroapi');
     });
   });
 
