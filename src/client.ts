@@ -187,7 +187,7 @@ export class Flightaware {
    *
    * @param {string | undefined} [opts.apiKey=process.env['FLIGHTAWARE_API_KEY'] ?? undefined]
    * @param {string | undefined} [opts.env=process.env['FLIGHTAWARE_ENV'] ?? aeroapi]
-   * @param {string} [opts.baseURL=process.env['FLIGHTAWARE_BASE_URL'] ?? https://{env}.flightaware.com/aeroapi] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['FLIGHTAWARE_BASE_URL'] ?? https://aeroapi.flightaware.com/aeroapi] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -211,7 +211,7 @@ export class Flightaware {
       apiKey,
       env,
       ...opts,
-      baseURL: baseURL || `https://${env}.flightaware.com/aeroapi`,
+      baseURL: baseURL || `https://aeroapi.flightaware.com/aeroapi`,
     };
 
     this.baseURL = options.baseURL!;

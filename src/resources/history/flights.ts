@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
-import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
@@ -31,11 +30,7 @@ export class Flights extends APIResource {
     query: FlightRetrieveParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightRetrieveResponse> {
-    return this._client.get(path`/history/flights/${ident}`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/history/flights/${ident}`, { query, ...options });
   }
 
   /**
@@ -53,11 +48,7 @@ export class Flights extends APIResource {
     query: FlightMapParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightMapResponse> {
-    return this._client.get(path`/history/flights/${id}/map`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/history/flights/${id}/map`, { query, ...options });
   }
 
   /**
@@ -75,10 +66,7 @@ export class Flights extends APIResource {
    * ```
    */
   route(id: string, options?: RequestOptions): APIPromise<FlightRouteResponse> {
-    return this._client.get(path`/history/flights/${id}/route`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/history/flights/${id}/route`, options);
   }
 
   /**
@@ -97,11 +85,7 @@ export class Flights extends APIResource {
     query: FlightTrackParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightTrackResponse> {
-    return this._client.get(path`/history/flights/${id}/track`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/history/flights/${id}/track`, { query, ...options });
   }
 }
 

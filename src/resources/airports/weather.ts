@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
-import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
@@ -23,11 +22,7 @@ export class Weather extends APIResource {
     query: WeatherGetForecastParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<WeatherGetForecastResponse> {
-    return this._client.get(path`/airports/${id}/weather/forecast`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/weather/forecast`, { query, ...options });
   }
 
   /**
@@ -46,11 +41,7 @@ export class Weather extends APIResource {
     query: WeatherGetObservationsParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<WeatherGetObservationsResponse> {
-    return this._client.get(path`/airports/${id}/weather/observations`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/weather/observations`, { query, ...options });
   }
 }
 

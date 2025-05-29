@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
-import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
@@ -21,11 +20,7 @@ export class Nearby extends APIResource {
    * ```
    */
   list(query: NearbyListParams, options?: RequestOptions): APIPromise<NearbyListResponse> {
-    return this._client.get('/airports/nearby', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/airports/nearby', { query, ...options });
   }
 
   /**
@@ -45,11 +40,7 @@ export class Nearby extends APIResource {
     query: NearbyListFromAirportParams,
     options?: RequestOptions,
   ): APIPromise<NearbyListFromAirportResponse> {
-    return this._client.get(path`/airports/${id}/nearby`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/nearby`, { query, ...options });
   }
 }
 

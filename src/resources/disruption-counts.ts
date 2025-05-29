@@ -2,7 +2,6 @@
 
 import { APIResource } from '../core/resource';
 import { APIPromise } from '../core/api-promise';
-import { buildHeaders } from '../internal/headers';
 import { RequestOptions } from '../internal/request-options';
 import { path } from '../internal/utils/path';
 
@@ -81,11 +80,7 @@ export class DisruptionCounts extends APIResource {
     options?: RequestOptions,
   ): APIPromise<DisruptionCountRetrieveEntityResponse> {
     const { entity_type, ...query } = params;
-    return this._client.get(path`/disruption_counts/${entity_type}/${id}`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/disruption_counts/${entity_type}/${id}`, { query, ...options });
   }
 
   /**
@@ -159,11 +154,7 @@ export class DisruptionCounts extends APIResource {
     query: DisruptionCountRetrieveGlobalParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<DisruptionCountRetrieveGlobalResponse> {
-    return this._client.get(path`/disruption_counts/${entityType}`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/disruption_counts/${entityType}`, { query, ...options });
   }
 }
 

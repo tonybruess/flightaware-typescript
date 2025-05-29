@@ -2,7 +2,6 @@
 
 import { APIResource } from '../core/resource';
 import { APIPromise } from '../core/api-promise';
-import { buildHeaders } from '../internal/headers';
 import { RequestOptions } from '../internal/request-options';
 
 export class Account extends APIResource {
@@ -14,11 +13,7 @@ export class Account extends APIResource {
     query: AccountGetUsageParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<AccountGetUsageResponse> {
-    return this._client.get('/account/usage', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/account/usage', { query, ...options });
   }
 }
 

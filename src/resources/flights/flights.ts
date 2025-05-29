@@ -42,11 +42,7 @@ export class Flights extends APIResource {
     query: FlightRetrieveParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightRetrieveResponse> {
-    return this._client.get(path`/flights/${ident}`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/flights/${ident}`, { query, ...options });
   }
 
   /**
@@ -69,11 +65,7 @@ export class Flights extends APIResource {
     query: FlightGetCanonicalIdentParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightGetCanonicalIdentResponse> {
-    return this._client.get(path`/flights/${ident}/canonical`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/flights/${ident}/canonical`, { query, ...options });
   }
 
   /**
@@ -87,10 +79,7 @@ export class Flights extends APIResource {
    * ```
    */
   getCurrentPosition(id: string, options?: RequestOptions): APIPromise<FlightGetCurrentPositionResponse> {
-    return this._client.get(path`/flights/${id}/position`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/flights/${id}/position`, options);
   }
 
   /**
@@ -108,10 +97,7 @@ export class Flights extends APIResource {
    * ```
    */
   getFiledRoute(id: string, options?: RequestOptions): APIPromise<FlightGetFiledRouteResponse> {
-    return this._client.get(path`/flights/${id}/route`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/flights/${id}/route`, options);
   }
 
   /**
@@ -131,11 +117,7 @@ export class Flights extends APIResource {
     query: FlightGetTrackParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightGetTrackResponse> {
-    return this._client.get(path`/flights/${id}/track`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/flights/${id}/track`, { query, ...options });
   }
 
   /**
@@ -154,11 +136,7 @@ export class Flights extends APIResource {
     query: FlightGetTrackMapParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightGetTrackMapResponse> {
-    return this._client.get(path`/flights/${id}/map`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/flights/${id}/map`, { query, ...options });
   }
 
   /**
@@ -185,10 +163,7 @@ export class Flights extends APIResource {
     return this._client.post(path`/flights/${ident}/intents`, {
       body,
       ...options,
-      headers: buildHeaders([
-        { 'Content-Type': 'application/json; charset=utf-8', Accept: '*/*' },
-        options?.headers,
-      ]),
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
     });
   }
 }
