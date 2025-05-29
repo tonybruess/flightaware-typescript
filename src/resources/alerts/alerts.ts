@@ -30,10 +30,7 @@ export class Alerts extends APIResource {
     return this._client.post('/alerts', {
       body,
       ...options,
-      headers: buildHeaders([
-        { 'Content-Type': 'application/json; charset=utf-8', Accept: '*/*' },
-        options?.headers,
-      ]),
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
     });
   }
 
@@ -46,10 +43,7 @@ export class Alerts extends APIResource {
    * ```
    */
   retrieve(id: number, options?: RequestOptions): APIPromise<AlertRetrieveResponse> {
-    return this._client.get(path`/alerts/${id}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/alerts/${id}`, options);
   }
 
   /**
@@ -69,10 +63,7 @@ export class Alerts extends APIResource {
     return this._client.put(path`/alerts/${id}`, {
       body,
       ...options,
-      headers: buildHeaders([
-        { 'Content-Type': 'application/json; charset=utf-8', Accept: '*/*' },
-        options?.headers,
-      ]),
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
     });
   }
 
@@ -90,11 +81,7 @@ export class Alerts extends APIResource {
     query: AlertListParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<AlertListResponse> {
-    return this._client.get('/alerts', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/alerts', { query, ...options });
   }
 
   /**

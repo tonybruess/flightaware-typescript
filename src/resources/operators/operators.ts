@@ -15,7 +15,6 @@ import {
   Flights,
 } from './flights';
 import { APIPromise } from '../../core/api-promise';
-import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
@@ -27,10 +26,7 @@ export class Operators extends APIResource {
    * headquarter location, etc.
    */
   retrieve(id: string, options?: RequestOptions): APIPromise<OperatorRetrieveResponse> {
-    return this._client.get(path`/operators/${id}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/operators/${id}`, options);
   }
 
   /**
@@ -41,11 +37,7 @@ export class Operators extends APIResource {
     query: OperatorListParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<OperatorListResponse> {
-    return this._client.get('/operators', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/operators', { query, ...options });
   }
 
   /**
@@ -59,11 +51,7 @@ export class Operators extends APIResource {
     query: OperatorGetCanonicalParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<OperatorGetCanonicalResponse> {
-    return this._client.get(path`/operators/${id}/canonical`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/operators/${id}/canonical`, { query, ...options });
   }
 }
 

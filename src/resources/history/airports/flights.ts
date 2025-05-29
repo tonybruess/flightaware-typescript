@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../core/resource';
 import { APIPromise } from '../../../core/api-promise';
-import { buildHeaders } from '../../../internal/headers';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
 
@@ -29,11 +28,7 @@ export class Flights extends APIResource {
     query: FlightArrivalsParams,
     options?: RequestOptions,
   ): APIPromise<FlightArrivalsResponse> {
-    return this._client.get(path`/history/airports/${id}/flights/arrivals`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/history/airports/${id}/flights/arrivals`, { query, ...options });
   }
 
   /**
@@ -58,11 +53,7 @@ export class Flights extends APIResource {
     query: FlightDeparturesParams,
     options?: RequestOptions,
   ): APIPromise<FlightDeparturesResponse> {
-    return this._client.get(path`/history/airports/${id}/flights/departures`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/history/airports/${id}/flights/departures`, { query, ...options });
   }
 }
 

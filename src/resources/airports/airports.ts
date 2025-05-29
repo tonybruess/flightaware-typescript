@@ -37,7 +37,6 @@ import {
   WeatherGetObservationsResponse,
 } from './weather';
 import { APIPromise } from '../../core/api-promise';
-import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
@@ -58,10 +57,7 @@ export class Airports extends APIResource {
    * ```
    */
   retrieve(id: string, options?: RequestOptions): APIPromise<AirportRetrieveResponse> {
-    return this._client.get(path`/airports/${id}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}`, options);
   }
 
   /**
@@ -78,11 +74,7 @@ export class Airports extends APIResource {
     query: AirportListParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<AirportListResponse> {
-    return this._client.get('/airports', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/airports', { query, ...options });
   }
 
   /**
@@ -103,11 +95,7 @@ export class Airports extends APIResource {
     query: AirportGetCanonicalCodeParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<AirportGetCanonicalCodeResponse> {
-    return this._client.get(path`/airports/${id}/canonical`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/canonical`, { query, ...options });
   }
 
   /**
@@ -127,11 +115,7 @@ export class Airports extends APIResource {
     options?: RequestOptions,
   ): APIPromise<AirportGetRoutesResponse> {
     const { id, ...query } = params;
-    return this._client.get(path`/airports/${id}/routes/${destID}`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/routes/${destID}`, { query, ...options });
   }
 }
 

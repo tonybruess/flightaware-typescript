@@ -2,7 +2,6 @@
 
 import { APIResource } from '../core/resource';
 import { APIPromise } from '../core/api-promise';
-import { buildHeaders } from '../internal/headers';
 import { RequestOptions } from '../internal/request-options';
 import { path } from '../internal/utils/path';
 
@@ -24,10 +23,7 @@ export class Aircraft extends APIResource {
    * ```
    */
   checkBlocked(ident: string, options?: RequestOptions): APIPromise<AircraftCheckBlockedResponse> {
-    return this._client.get(path`/aircraft/${ident}/blocked`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/aircraft/${ident}/blocked`, options);
   }
 
   /**
@@ -45,10 +41,7 @@ export class Aircraft extends APIResource {
    * ```
    */
   getOwner(ident: string, options?: RequestOptions): APIPromise<AircraftGetOwnerResponse> {
-    return this._client.get(path`/aircraft/${ident}/owner`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/aircraft/${ident}/owner`, options);
   }
 
   /**
@@ -62,10 +55,7 @@ export class Aircraft extends APIResource {
    * ```
    */
   getTypeInfo(type: string, options?: RequestOptions): APIPromise<AircraftGetTypeInfoResponse> {
-    return this._client.get(path`/aircraft/types/${type}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/aircraft/types/${type}`, options);
   }
 }
 

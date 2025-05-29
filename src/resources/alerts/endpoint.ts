@@ -15,10 +15,7 @@ export class Endpoint extends APIResource {
    * ```
    */
   retrieve(options?: RequestOptions): APIPromise<EndpointRetrieveResponse> {
-    return this._client.get('/alerts/endpoint', {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/alerts/endpoint', options);
   }
 
   /**
@@ -38,10 +35,7 @@ export class Endpoint extends APIResource {
     return this._client.put('/alerts/endpoint', {
       body,
       ...options,
-      headers: buildHeaders([
-        { 'Content-Type': 'application/json; charset=utf-8', Accept: '*/*' },
-        options?.headers,
-      ]),
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
     });
   }
 
