@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../core/resource';
 import { APIPromise } from '../../../core/api-promise';
-import { buildHeaders } from '../../../internal/headers';
 import { RequestOptions } from '../../../internal/request-options';
 
 export class Search extends APIResource {
@@ -20,11 +19,7 @@ export class Search extends APIResource {
     query: SearchAdvancedParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<SearchAdvancedResponse> {
-    return this._client.get('/foresight/flights/search/advanced', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/foresight/flights/search/advanced', { query, ...options });
   }
 }
 

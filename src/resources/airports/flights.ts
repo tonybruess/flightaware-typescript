@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
-import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
@@ -23,11 +22,7 @@ export class Flights extends APIResource {
     query: FlightListParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightListResponse> {
-    return this._client.get(path`/airports/${id}/flights`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/flights`, { query, ...options });
   }
 
   /**
@@ -48,10 +43,7 @@ export class Flights extends APIResource {
    * ```
    */
   getCounts(id: string, options?: RequestOptions): APIPromise<FlightGetCountsResponse> {
-    return this._client.get(path`/airports/${id}/flights/counts`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/flights/counts`, options);
   }
 
   /**
@@ -71,11 +63,7 @@ export class Flights extends APIResource {
     query: FlightListArrivalsParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightListArrivalsResponse> {
-    return this._client.get(path`/airports/${id}/flights/arrivals`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/flights/arrivals`, { query, ...options });
   }
 
   /**
@@ -96,11 +84,7 @@ export class Flights extends APIResource {
     query: FlightListDeparturesParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightListDeparturesResponse> {
-    return this._client.get(path`/airports/${id}/flights/departures`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/flights/departures`, { query, ...options });
   }
 
   /**
@@ -122,11 +106,7 @@ export class Flights extends APIResource {
     query: FlightListScheduledArrivalsParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightListScheduledArrivalsResponse> {
-    return this._client.get(path`/airports/${id}/flights/scheduled_arrivals`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/flights/scheduled_arrivals`, { query, ...options });
   }
 
   /**
@@ -150,11 +130,7 @@ export class Flights extends APIResource {
     query: FlightListScheduledDeparturesParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightListScheduledDeparturesResponse> {
-    return this._client.get(path`/airports/${id}/flights/scheduled_departures`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/flights/scheduled_departures`, { query, ...options });
   }
 
   /**
@@ -181,11 +157,7 @@ export class Flights extends APIResource {
     options?: RequestOptions,
   ): APIPromise<FlightListToDestinationResponse> {
     const { id, ...query } = params;
-    return this._client.get(path`/airports/${id}/flights/to/${destID}`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/flights/to/${destID}`, { query, ...options });
   }
 }
 

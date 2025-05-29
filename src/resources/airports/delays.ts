@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
-import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
@@ -19,10 +18,7 @@ export class Delays extends APIResource {
    * ```
    */
   retrieve(id: string, options?: RequestOptions): APIPromise<DelayRetrieveResponse> {
-    return this._client.get(path`/airports/${id}/delays`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/airports/${id}/delays`, options);
   }
 
   /**
@@ -40,11 +36,7 @@ export class Delays extends APIResource {
     query: DelayListParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<DelayListResponse> {
-    return this._client.get('/airports/delays', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/airports/delays', { query, ...options });
   }
 }
 

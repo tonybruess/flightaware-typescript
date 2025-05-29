@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
-import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 
 export class Search extends APIResource {
@@ -135,11 +134,7 @@ export class Search extends APIResource {
     query: SearchAdvancedSearchParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<SearchAdvancedSearchResponse> {
-    return this._client.get('/flights/search/advanced', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/flights/search/advanced', { query, ...options });
   }
 
   /**
@@ -154,11 +149,7 @@ export class Search extends APIResource {
     query: SearchCountParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<SearchCountResponse> {
-    return this._client.get('/flights/search/count', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/flights/search/count', { query, ...options });
   }
 
   /**
@@ -229,11 +220,7 @@ export class Search extends APIResource {
     query: SearchFindPositionsParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<SearchFindPositionsResponse> {
-    return this._client.get('/flights/search/positions', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/flights/search/positions', { query, ...options });
   }
 
   /**
@@ -250,11 +237,7 @@ export class Search extends APIResource {
     query: SearchPerformParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<SearchPerformResponse> {
-    return this._client.get('/flights/search', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get('/flights/search', { query, ...options });
   }
 }
 

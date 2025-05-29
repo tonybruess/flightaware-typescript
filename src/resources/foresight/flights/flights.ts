@@ -4,7 +4,6 @@ import { APIResource } from '../../../core/resource';
 import * as SearchAPI from './search';
 import { Search, SearchAdvancedParams, SearchAdvancedResponse } from './search';
 import { APIPromise } from '../../../core/api-promise';
-import { buildHeaders } from '../../../internal/headers';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
 
@@ -30,11 +29,7 @@ export class Flights extends APIResource {
     query: FlightRetrieveParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<FlightRetrieveResponse> {
-    return this._client.get(path`/foresight/flights/${ident}`, {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/foresight/flights/${ident}`, { query, ...options });
   }
 
   /**
@@ -47,10 +42,7 @@ export class Flights extends APIResource {
    * ```
    */
   retrievePosition(id: string, options?: RequestOptions): APIPromise<FlightRetrievePositionResponse> {
-    return this._client.get(path`/foresight/flights/${id}/position`, {
-      ...options,
-      headers: buildHeaders([{ Accept: 'application/json; charset=utf-8' }, options?.headers]),
-    });
+    return this._client.get(path`/foresight/flights/${id}/position`, options);
   }
 }
 
