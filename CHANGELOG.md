@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-05-31)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/tonybruess/flightaware-typescript/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Chores
+
+* **deps:** bump eslint-plugin-prettier ([92ef65f](https://github.com/tonybruess/flightaware-typescript/commit/92ef65f40a1c1e733ece94c79417c285fc1b91e6))
+* **internal:** update jest config ([3aa03c3](https://github.com/tonybruess/flightaware-typescript/commit/3aa03c3601d66de40a1f3204616d4250244d686c))
+
 ## 0.1.0-alpha.1 (2025-05-29)
 
 Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/tonybruess/flightaware-typescript/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)
