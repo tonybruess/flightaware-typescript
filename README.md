@@ -26,13 +26,9 @@ const client = new Flightaware({
   apiKey: process.env['FLIGHTAWARE_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-  const response = await client.flights.search.perform();
+const response = await client.flights.search.perform();
 
-  console.log(response.flights);
-}
-
-main();
+console.log(response.flights);
 ```
 
 ### Request & Response types
@@ -47,11 +43,7 @@ const client = new Flightaware({
   apiKey: process.env['FLIGHTAWARE_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-  const response: Flightaware.Flights.SearchPerformResponse = await client.flights.search.perform();
-}
-
-main();
+const response: Flightaware.Flights.SearchPerformResponse = await client.flights.search.perform();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -64,19 +56,15 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-async function main() {
-  const response = await client.flights.search.perform().catch(async (err) => {
-    if (err instanceof Flightaware.APIError) {
-      console.log(err.status); // 400
-      console.log(err.name); // BadRequestError
-      console.log(err.headers); // {server: 'nginx', ...}
-    } else {
-      throw err;
-    }
-  });
-}
-
-main();
+const response = await client.flights.search.perform().catch(async (err) => {
+  if (err instanceof Flightaware.APIError) {
+    console.log(err.status); // 400
+    console.log(err.name); // BadRequestError
+    console.log(err.headers); // {server: 'nginx', ...}
+  } else {
+    throw err;
+  }
+});
 ```
 
 Error codes are as follows:
