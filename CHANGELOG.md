@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2025-06-14)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/tonybruess/flightaware-typescript/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([a5a4705](https://github.com/tonybruess/flightaware-typescript/commit/a5a4705c15f57b0399dcf80fcbf1c5ca03e61f6a))
+
+
+### Chores
+
+* **internal:** add pure annotations, make base APIResource abstract ([919a0ca](https://github.com/tonybruess/flightaware-typescript/commit/919a0ca6ee1f6aed9cf702bc39a6489ecd22de30))
+
 ## 0.1.0-alpha.2 (2025-06-07)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/tonybruess/flightaware-typescript/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
