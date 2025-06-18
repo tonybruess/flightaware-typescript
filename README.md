@@ -1,6 +1,6 @@
 # Flightaware TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/flightaware.svg)](https://npmjs.org/package/flightaware) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/flightaware)
+[![NPM version](<https://img.shields.io/npm/v/flightaware.svg?label=npm%20(stable)>)](https://npmjs.org/package/flightaware) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/flightaware)
 
 This library provides convenient access to the Flightaware REST API from server-side TypeScript or JavaScript.
 
