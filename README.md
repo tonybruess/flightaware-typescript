@@ -1,6 +1,6 @@
 # Flightaware TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/flightaware.svg)](https://npmjs.org/package/flightaware) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/flightaware)
+[![NPM version](<https://img.shields.io/npm/v/flightaware.svg?label=npm%20(stable)>)](https://npmjs.org/package/flightaware) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/flightaware)
 
 This library provides convenient access to the Flightaware REST API from server-side TypeScript or JavaScript.
 
@@ -222,9 +222,8 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.foo.create({
-  foo: 'my_param',
-  bar: 12,
+client.flights.search.perform({
+  // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',
 });

@@ -2,7 +2,7 @@
 
 import type { Flightaware } from '../client';
 
-export class APIResource {
+export abstract class APIResource {
   protected _client: Flightaware;
 
   constructor(client: Flightaware) {
