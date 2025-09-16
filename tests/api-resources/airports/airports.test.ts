@@ -8,7 +8,7 @@ const client = new Flightaware({
 });
 
 describe('resource airports', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.airports.retrieve('id');
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource airports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.airports.list();
     const rawResponse = await responsePromise.asResponse();
@@ -32,7 +32,7 @@ describe('resource airports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -40,7 +40,7 @@ describe('resource airports', () => {
     ).rejects.toThrow(Flightaware.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getCanonicalCode', async () => {
     const responsePromise = client.airports.getCanonicalCode('id');
     const rawResponse = await responsePromise.asResponse();
@@ -52,7 +52,7 @@ describe('resource airports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getCanonicalCode: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -60,7 +60,7 @@ describe('resource airports', () => {
     ).rejects.toThrow(Flightaware.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getRoutes: only required params', async () => {
     const responsePromise = client.airports.getRoutes('dest_id', { id: 'id' });
     const rawResponse = await responsePromise.asResponse();
@@ -72,7 +72,7 @@ describe('resource airports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getRoutes: required and optional params', async () => {
     const response = await client.airports.getRoutes('dest_id', {
       id: 'id',

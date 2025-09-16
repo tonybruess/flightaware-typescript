@@ -8,7 +8,7 @@ const client = new Flightaware({
 });
 
 describe('resource aircraft', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('lastFlight', async () => {
     const responsePromise = client.history.aircraft.lastFlight('registration');
     const rawResponse = await responsePromise.asResponse();

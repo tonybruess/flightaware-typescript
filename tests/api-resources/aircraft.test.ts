@@ -8,7 +8,7 @@ const client = new Flightaware({
 });
 
 describe('resource aircraft', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('checkBlocked', async () => {
     const responsePromise = client.aircraft.checkBlocked('ident');
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource aircraft', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getOwner', async () => {
     const responsePromise = client.aircraft.getOwner('ident');
     const rawResponse = await responsePromise.asResponse();
@@ -32,7 +32,7 @@ describe('resource aircraft', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getTypeInfo', async () => {
     const responsePromise = client.aircraft.getTypeInfo('GALX');
     const rawResponse = await responsePromise.asResponse();

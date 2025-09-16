@@ -8,7 +8,7 @@ const client = new Flightaware({
 });
 
 describe('resource nearby', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.airports.nearby.list({ latitude: 0, longitude: 0, radius: 0 });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource nearby', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.airports.nearby.list({
       latitude: 0,
@@ -32,7 +32,7 @@ describe('resource nearby', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listFromAirport: only required params', async () => {
     const responsePromise = client.airports.nearby.listFromAirport('id', { radius: 0 });
     const rawResponse = await responsePromise.asResponse();
@@ -44,7 +44,7 @@ describe('resource nearby', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listFromAirport: required and optional params', async () => {
     const response = await client.airports.nearby.listFromAirport('id', {
       radius: 0,

@@ -423,7 +423,7 @@ export class Flightaware {
     const response = await this.fetchWithTimeout(url, req, timeout, controller).catch(castToError);
     const headersTime = Date.now();
 
-    if (response instanceof Error) {
+    if (response instanceof globalThis.Error) {
       const retryMessage = `retrying, ${retriesRemaining} attempts remaining`;
       if (options.signal?.aborted) {
         throw new Errors.APIUserAbortError();
@@ -730,7 +730,7 @@ export class Flightaware {
         // Preserve legacy string encoding behavior for now
         headers.values.has('content-type')) ||
       // `Blob` is superset of `File`
-      body instanceof Blob ||
+      ((globalThis as any).Blob && body instanceof (globalThis as any).Blob) ||
       // `FormData` -> `multipart/form-data`
       body instanceof FormData ||
       // `URLSearchParams` -> `application/x-www-form-urlencoded`
@@ -780,6 +780,7 @@ export class Flightaware {
   disruptionCounts: API.DisruptionCounts = new API.DisruptionCounts(this);
   account: API.Account = new API.Account(this);
 }
+
 Flightaware.Flights = Flights;
 Flightaware.Foresight = Foresight;
 Flightaware.Airports = Airports;
@@ -790,6 +791,7 @@ Flightaware.Aircraft = Aircraft;
 Flightaware.Schedules = Schedules;
 Flightaware.DisruptionCounts = DisruptionCounts;
 Flightaware.Account = Account;
+
 export declare namespace Flightaware {
   export type RequestOptions = Opts.RequestOptions;
 
