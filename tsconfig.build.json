@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "flightaware/*": ["dist/src/*"],
-      "flightaware": ["dist/src/index.ts"]
+      "flightaware/*": ["./dist/src/*"],
+      "flightaware": ["./dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,
