@@ -8,7 +8,7 @@ const client = new Flightaware({
 });
 
 describe('resource flights', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('arrivals: only required params', async () => {
     const responsePromise = client.history.airports.flights.arrivals('id', { end: {}, start: {} });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('arrivals: required and optional params', async () => {
     const response = await client.history.airports.flights.arrivals('id', {
       end: {},
@@ -32,7 +32,7 @@ describe('resource flights', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('departures: only required params', async () => {
     const responsePromise = client.history.airports.flights.departures('id', { end: {}, start: {} });
     const rawResponse = await responsePromise.asResponse();
@@ -44,7 +44,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('departures: required and optional params', async () => {
     const response = await client.history.airports.flights.departures('id', {
       end: {},

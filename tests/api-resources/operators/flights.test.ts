@@ -8,7 +8,7 @@ const client = new Flightaware({
 });
 
 describe('resource flights', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.operators.flights.list('UAL');
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -32,7 +32,7 @@ describe('resource flights', () => {
     ).rejects.toThrow(Flightaware.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getCounts', async () => {
     const responsePromise = client.operators.flights.getCounts('UAL');
     const rawResponse = await responsePromise.asResponse();
@@ -44,7 +44,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listArrivals', async () => {
     const responsePromise = client.operators.flights.listArrivals('UAL');
     const rawResponse = await responsePromise.asResponse();
@@ -56,7 +56,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listArrivals: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -68,7 +68,7 @@ describe('resource flights', () => {
     ).rejects.toThrow(Flightaware.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listEnroute', async () => {
     const responsePromise = client.operators.flights.listEnroute('UAL');
     const rawResponse = await responsePromise.asResponse();
@@ -80,7 +80,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listEnroute: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -92,7 +92,7 @@ describe('resource flights', () => {
     ).rejects.toThrow(Flightaware.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listScheduled', async () => {
     const responsePromise = client.operators.flights.listScheduled('UAL');
     const rawResponse = await responsePromise.asResponse();
@@ -104,7 +104,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listScheduled: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(

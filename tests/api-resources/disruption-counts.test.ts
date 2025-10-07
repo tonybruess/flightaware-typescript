@@ -8,7 +8,7 @@ const client = new Flightaware({
 });
 
 describe('resource disruptionCounts', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveEntity: only required params', async () => {
     const responsePromise = client.disruptionCounts.retrieveEntity('id', { entity_type: 'origin' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource disruptionCounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveEntity: required and optional params', async () => {
     const response = await client.disruptionCounts.retrieveEntity('id', {
       entity_type: 'origin',
@@ -28,7 +28,7 @@ describe('resource disruptionCounts', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveGlobal', async () => {
     const responsePromise = client.disruptionCounts.retrieveGlobal('origin');
     const rawResponse = await responsePromise.asResponse();
@@ -40,7 +40,7 @@ describe('resource disruptionCounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveGlobal: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(

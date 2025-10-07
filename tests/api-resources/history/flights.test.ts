@@ -8,7 +8,7 @@ const client = new Flightaware({
 });
 
 describe('resource flights', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.history.flights.retrieve('ident');
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -32,7 +32,7 @@ describe('resource flights', () => {
     ).rejects.toThrow(Flightaware.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('map', async () => {
     const responsePromise = client.history.flights.map('id');
     const rawResponse = await responsePromise.asResponse();
@@ -44,7 +44,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('map: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -65,7 +65,7 @@ describe('resource flights', () => {
     ).rejects.toThrow(Flightaware.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('route', async () => {
     const responsePromise = client.history.flights.route('id');
     const rawResponse = await responsePromise.asResponse();
@@ -77,7 +77,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('track', async () => {
     const responsePromise = client.history.flights.track('id');
     const rawResponse = await responsePromise.asResponse();
@@ -89,7 +89,7 @@ describe('resource flights', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('track: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
