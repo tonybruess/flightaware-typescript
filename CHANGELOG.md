@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2025-10-07)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/tonybruess/flightaware-typescript/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Performance Improvements
+
+* faster formatting ([ee0cc5c](https://github.com/tonybruess/flightaware-typescript/commit/ee0cc5c0ddd5a91cfadb9b27cb026e1fd6950c66))
+
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([fb6d150](https://github.com/tonybruess/flightaware-typescript/commit/fb6d1504a42a13b29701652e2e3eb686bfc3d649))
+* **internal:** codegen related update ([82bb591](https://github.com/tonybruess/flightaware-typescript/commit/82bb591172ab3cb38fde1d9cd90572fb885de641))
+* **internal:** fix incremental formatting in some cases ([bc74060](https://github.com/tonybruess/flightaware-typescript/commit/bc740607ec595b66bb393719a8ed7c3a6957ff1c))
+* **internal:** ignore .eslintcache ([37ad966](https://github.com/tonybruess/flightaware-typescript/commit/37ad9668399679db78935ddada5ce3b9b6b31307))
+* **internal:** remove .eslintcache ([8d29f57](https://github.com/tonybruess/flightaware-typescript/commit/8d29f57455c73f6352e2f05518b889933f1c3763))
+* **internal:** remove deprecated `compilerOptions.baseUrl` from tsconfig.json ([0d4028c](https://github.com/tonybruess/flightaware-typescript/commit/0d4028ce106cb316da4fdc73f2096eb544fce349))
+* **internal:** use npm pack for build uploads ([36161e1](https://github.com/tonybruess/flightaware-typescript/commit/36161e1c666a1ea10b68db602ffbaede6d3fa426))
+* **internal:** version bump ([8a38367](https://github.com/tonybruess/flightaware-typescript/commit/8a383670cfc35eef19f29a3c3f74d404e8c60c8a))
+* **jsdoc:** fix [@link](https://github.com/link) annotations to refer only to parts of the package‘s public interface ([1ab8a2c](https://github.com/tonybruess/flightaware-typescript/commit/1ab8a2c76ecb576e0a8c4a4093bccc9ac802d812))
+
 ## 0.1.0-alpha.3 (2025-08-07)
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/tonybruess/flightaware-typescript/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
